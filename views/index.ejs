@@ -1,0 +1,21 @@
+<%- include("header.ejs") %>
+<main class="container">
+  <div class="row g-5">
+   <% for (const [key, value] of Object.entries(posts)) { %> 
+    <article class="blog-post">
+
+      <h2 class="display-5 link-body-emphasis mb-1"><%= key %></h2>
+      <p><%= value %></p>
+      <hr>
+      <div class="d-flex justify-content-around">
+        <a class="link-secondary p-2" href="/editNote?title=<%= key %>">Edit</a>
+        <a class="link-secondary p-2" href="/deleteNote?title=<%= key %>">Delete</a>
+      </div>
+      
+    </article>
+    <% } %>
+  </div>
+  
+</main>  
+
+<%- include("footer.ejs") %>
